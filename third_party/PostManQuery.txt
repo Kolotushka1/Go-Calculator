@@ -1,0 +1,194 @@
+{
+    "info": {
+        "name": "Go Calculator Service",
+        "_postman_id": "123e4567-e89b-12d3-a456-426614174000",
+        "description": "Коллекция Postman для тестирования Go Calculator Service",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Успешный расчет",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"expression\": \"2+2*2\"}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/v1/calculate",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "v1", "calculate"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Расчет с использованием скобок",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"expression\": \"(1 + 2) * 3 - 4 / 2\"}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/v1/calculate",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "v1", "calculate"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Деление на ноль",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"expression\": \"10/(5-5)\"}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/v1/calculate",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "v1", "calculate"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Некорректное выражение",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"expression\": \"2+a\"}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/v1/calculate",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "v1", "calculate"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Неподдерживаемый метод",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "body": {},
+                "url": {
+                    "raw": "http://localhost:8080/api/v1/calculate",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "v1", "calculate"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Неправильный формат JSON",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "invalid json"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/v1/calculate",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "v1", "calculate"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Пустое выражение",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"expression\": \"\"}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/v1/calculate",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "v1", "calculate"]
+                }
+            },
+            "response": []
+        },
+        {
+            "name": "Сложное выражение с несколькими операторами",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"expression\": \"3 + 4 * 2 / (1 - 5) * 2\"}"
+                },
+                "url": {
+                    "raw": "http://localhost:8080/api/v1/calculate",
+                    "protocol": "http",
+                    "host": ["localhost"],
+                    "port": "8080",
+                    "path": ["api", "v1", "calculate"]
+                }
+            },
+            "response": []
+        }
+    ]
+}

@@ -1,4 +1,4 @@
-package main
+package calculator
 
 import (
 	"fmt"
@@ -146,14 +146,4 @@ func applyOperator(values []float64, operators []string) ([]float64, []string, e
 
 	values = append(values, result)
 	return values, operators, nil
-}
-
-func main() {
-	example := "(1 + 2) * 3 - 4 / 2"
-	result, err := Calc(example)
-	if err != nil {
-		fmt.Println("Ошибка:", err)
-	} else {
-		fmt.Println("Результат:", result)
-	}
 }
